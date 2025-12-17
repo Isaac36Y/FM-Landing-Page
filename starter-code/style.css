@@ -74,15 +74,20 @@ ol[role='list'] {
   isolation: isolate;
 }
 
-
+main {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .hero {
     background-color: var(--purple900);
     width: 100%;
     display: flex; 
     flex-direction: column;
-    padding-block: 2rem;
-    
+    align-items: center;
+    padding-block-start: 2rem;
 }
 
 .hero__nav {
@@ -118,7 +123,7 @@ ol[role='list'] {
 
 .hero__btn {
     width: 10rem;
-    margin: 0 auto;
+    margin: 0 auto 8rem auto; /* only way to give the bottom of .hero space with the .hero__round-bottom? */
     font-family: var(--manrope);
     font-weight: 700;
     background: var(--green);
@@ -126,6 +131,22 @@ ol[role='list'] {
     border: none;
 }
 
+.hero__round-bottom { /* my only way to add the round bottom without getting lost in a <svg>. Please let me know if theres a better way because .hero__btn and .phone-img have to accomidate for it */
+    width: 100%;
+    color: var(--purple100);
+    border: none;
+}
+
+.phone-img {
+    max-width: 19rem;
+    position: absolute;
+    top: 22rem; /* I cannot figure this out. position: absolute; seems to be the only way I can position it how I want without messing up my .hero__round-bottom. It's just not very responsive inbetween vw */
+}
+
+.features {
+    background-color: var(--purple100);
+    padding-block-start: 7rem;
+}
 
 .underline {
      border-block-end: 0.2rem solid var(--green);
