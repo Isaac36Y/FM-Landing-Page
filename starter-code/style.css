@@ -1,0 +1,132 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./assets/fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400 700;
+  src: url('./assets/fonts/manrope/Manrope-VariableFont_wght.ttf');
+}
+
+:root {
+    --green: #44ffa1;
+    --purple900: #24053e;
+    --purple500: #584d62;
+    --purple100: #fcf8ff;
+    --white: #fff;
+    --fraunces: 'Fraunces', Arial, Helvetica, sans-serif;
+    --manrope: 'Manrope', Arial, Helvetica, sans-serif;
+}
+
+html {
+    font-family: var(--fraunces)
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+body {
+  
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4 {
+  overflow-wrap: break-word;
+  
+}
+
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+  padding: 0;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+
+
+.hero {
+    background-color: var(--purple900);
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    padding-block: 2rem;
+    
+}
+
+.hero__nav {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto 5rem auto;
+    color: var(--white);
+    
+}
+
+.hero__nav-apply {
+    font-family: var(--manrope);
+    font-weight: 700;
+    padding-block-end: 0.5rem;
+}
+
+.hero__header {
+    width: 20rem;
+    font-size: 2.5rem;
+    color: var(--white);
+    margin: 0 auto 1rem auto;
+    text-wrap: wrap;
+    text-align: center;
+    line-height: 1.1;
+
+    .hero__header-span {
+        text-decoration: underline solid var(--green) 0.2rem;
+        text-underline-offset: 0.4rem;
+    }
+}
+
+.hero__btn {
+    width: 10rem;
+    margin: 0 auto;
+    font-family: var(--manrope);
+    font-weight: 700;
+    background: var(--green);
+    padding-block: 1rem;
+    border: none;
+}
+
+
+.underline {
+     border-block-end: 0.2rem solid var(--green);
+}
