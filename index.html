@@ -13,8 +13,8 @@
 <body>
   <header class="hero">
     <nav class="hero__nav">
-      <img src="./assets/images/logo-light.svg">
-      <p class="hero__nav-apply underline">Apply for access</p>
+      <img src="./assets/images/logo-light.svg" class="hero__logo" alt="">
+      <button class="hero__nav-apply underline" type="button">Apply for access</button>
     </nav>
     <h1 class="hero__header">Data <span class="hero__header-span">tailored</span> to your needs.</h1>
     <button class="hero__btn" type="button">Learn more</button>     
@@ -26,7 +26,7 @@
   </div>
   <main>
     <section class="features">
-      <ol class="features__list" role="list">
+      <ul class="features__list" role="list"> <!-- ol or ul? the list is numbered but not necessarily ordered -->
         <li class="features__list-one">
           <p class="features__num">1</p>
           <div class="features__content"> <!-- div between number and content helps with tablet breakpoint when numbers go to the side but lists still stay in columns -->
@@ -57,7 +57,7 @@
             </p>
           </div>
         </li>
-      </ol>
+      </ul>
       <img src="./assets/ornamental (2).png" class="features__round-bottom">
     </section>
     <section class="founder">
@@ -69,16 +69,16 @@
           beta tester for our app and kickstart your company. Apply for access below and I’ll be
           in touch to schedule a call.
         </p>
-        <button class="founder__btn">Apply for access</button>
+        <button class="founder__btn" type="button">Apply for access</button>
       </div>
     </section>
   </main>
   <footer class="footer">
     <img src="./assets/images/logo-dark.svg" class="footer__img" alt="">
     <div class="footer__socials">
-      <a class="facebook"><img src="./assets/images/icon-facebook.svg" alt=""></a>
-      <a class="twitter"><img src="./assets/images/icon-twitter.svg" alt=""></a>
-      <a class="instagram"><img src="./assets/images/icon-instagram.svg" alt=""></a>
+      <a class="facebook" aria-label="Facebook"><img src="./assets/images/icon-facebook.svg" alt="Facebook"></a>
+      <a class="twitter" aria-label="Twitter"><img src="./assets/images/icon-twitter.svg" alt="Twitter"></a>
+      <a class="instagram" aria-label="Instagram"><img src="./assets/images/icon-instagram.svg" alt="Instagram"></a>
     </div>
   </footer>
 </body>

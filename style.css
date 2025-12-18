@@ -51,7 +51,7 @@ input, button, textarea, select {
   font: inherit;
 }
 
-p, h1, h2, h3, h4 {
+p, h1, h2, {
   overflow-wrap: break-word;
   
 }
@@ -59,7 +59,7 @@ p, h1, h2, h3, h4 {
 p {
   text-wrap: pretty;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2,  {
   text-wrap: balance;
 }
 
@@ -69,9 +69,6 @@ ol[role='list'] {
   padding: 0;
 }
 
-#root, #__next {
-  isolation: isolate;
-}
 
 /* first time trying nesting in css! Do I do it correctly or get to carried away? */
 
@@ -94,6 +91,9 @@ ol[role='list'] {
       font-size: 1.1rem;
       text-decoration: underline solid var(--green) 0.2rem;
       text-underline-offset: 0.7rem;
+      background-color: var(--purple900);
+      border: none;
+      color: var(--white)
     }
     .hero__nav-apply:hover{
       color: var(--green)
@@ -119,12 +119,11 @@ ol[role='list'] {
     font-weight: 700;
     background: var(--green);
     padding-block: 1rem;
-    border: none;
+    border: 0.1rem solid var(--green);
   }
-  .hero__btn:hover {  /* the button hover is causing the area around button to move slightly. I'm not sure how to fix this */
+  .hero__btn:hover {
     background-color: var(--purple900);
     color: var(--green);
-    border: 0.1rem solid var(--green);
   }
 }
 
@@ -132,7 +131,7 @@ ol[role='list'] {
     width: 100%;
     background-color: var(--purple900);
 }
-
+ 
 .phone-img { /* should I use this as a background-image instead? */
     max-width: 20rem;
     position: absolute;
@@ -220,12 +219,11 @@ ol[role='list'] {
       padding: 1rem;
       font-family: var(--manrope);
       font-weight: 700;
-      border: none;
+      border: 0.1rem solid var(--green);
     }
-    .founder__btn:hover {  /* the button hover is causing the area around button to move slightly. I'm not sure how to fix this */
+    .founder__btn:hover { 
       background-color: var(--purple900);
       color: var(--green);
-      border: 0.1rem solid var(--green);
     }
   }
 }
