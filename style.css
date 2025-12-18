@@ -51,7 +51,7 @@ input, button, textarea, select {
   font: inherit;
 }
 
-p, h1, h2, {
+p, h1, h2, h3 {
   overflow-wrap: break-word;
   
 }
@@ -59,7 +59,7 @@ p, h1, h2, {
 p {
   text-wrap: pretty;
 }
-h1, h2,  {
+h1, h2, h3 {
   text-wrap: balance;
 }
 
@@ -253,9 +253,11 @@ ol[role='list'] {
     background-repeat: no-repeat;
     background-position: -30vw 10vw, 120% 60%; /* % and vw is the best I found to position somewhat fix at this breakpoint any other better ways to make a bg-image responsive? */
     background-size: 20rem, 10rem;
-    gap: 1.5rem;
+    .hero__nav {
+      margin-block-end: 2.7rem;
+    }
     .hero__header {
-      transform: scale(1.3); /* is this scale bad for responsiveness on desktop? */
+      font-size: 3.5rem; /* is this scale bad for responsiveness on desktop? */
     }
     .hero__btn {
       margin-block-end: 8rem;
@@ -263,7 +265,8 @@ ol[role='list'] {
   }
 
   .phone-img {
-    max-width: 32rem;
+    max-width: 30rem;
+    top:21rem;
   }
 
   .features {
@@ -315,15 +318,14 @@ ol[role='list'] {
     background-position: -7% 9%, 104% 40%;
     background-size: 17rem, 10rem;
     .hero__nav {
-      width: 75%;
+      width: min(80%, 90rem);
       margin: 0;
       padding: 1rem 0 0 0 ;
       order: 99;   /* move to bottom of hero */
-      transform: scale(0.8);
     }
     .hero__btn {
     width: 8rem;
-    margin: 0 0 15rem 0;
+    margin: 2rem 0 15rem 0;
     padding: 0.5rem;
     }
   }
