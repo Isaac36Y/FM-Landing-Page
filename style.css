@@ -76,56 +76,56 @@ ol[role='list'] {
 
 
 .hero {
-    background-color: var(--purple900);
-    width: 100%;
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
-    padding-block-start: 2rem;
-    position: relative;
-    
-}
-
-.hero__nav { 
+  background-color: var(--purple900);
+  width: 100%;
+  display: flex; 
+  flex-direction: column;
+  align-items: center; /* only purpose is keeping the phone-image center */
+  padding-block-start: 2rem;
+  .hero__nav { 
     width: 90%;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto 3.5rem auto;
-    color: var(--white);
-    
-}
-
-.hero__nav-apply {
-    font-family: var(--manrope);
-    font-weight: 700;
-    font-size: 1.1rem;
-    text-align: center;
-    text-decoration: underline solid var(--green) 0.2rem;
-    text-underline-offset: 0.7rem;
-}
-
-.hero__header {
+    margin: 0 auto 3.5rem auto; /* giving the space between nav and hero__header. spacing is too inconsistent to se gap */
+    color: var(--white); 
+    .hero__nav-apply {
+      font-family: var(--manrope);
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: underline solid var(--green) 0.2rem;
+      text-underline-offset: 0.7rem;
+    }
+    .hero__nav-apply:hover{
+      color: var(--green)
+    }
+  } 
+  .hero__header {
     width: 22rem;
     font-size: 3rem;
     color: var(--white);
-    margin: 0 auto 1rem auto;
+    margin: 0 auto;
     text-wrap: wrap;
     text-align: center;
     line-height: 1.05;
-
-    .hero__header-span {
+    .hero__header-span { /* is this the best way to add an underline to one word? */
         text-decoration: underline solid var(--green) 0.2rem;
         text-underline-offset: 0.4rem;
     }
-}
-
-.hero__btn {
+  }
+  .hero__btn {
     width: 10rem;
-    margin: 1rem auto 9.5rem auto; /* only way to give the bottom of .hero space with the .hero__round-bottom? */
+    margin: 2rem auto 9.5rem auto; /* only way to give the bottom of .hero space with the .hero__round-bottom? */
     font-family: var(--manrope);
     font-weight: 700;
     background: var(--green);
     padding-block: 1rem;
+    border: none;
+  }
+  .hero__btn:hover {  /* the button hover is causing the area around button to move slightly. I'm not sure how to fix this */
+    background-color: var(--purple900);
+    color: var(--green);
+    border: 0.1rem solid var(--green);
+  }
 }
 
 .hero__round-bottom { /* my only way to add the round bottom without getting lost in a <svg>. Please let me know if theres a better way because .hero__btn and .phone-img have to accomidate for it */
@@ -140,48 +140,43 @@ ol[role='list'] {
 } 
 
 .features {
-    background-color: var(--purple100);
-    padding-block-start: 9.5rem;
-    color: var(--purple900);
-}
-
-.features__list {
-  width: 90%;
-  display: grid;
-  grid-template-columns: 1fr;
-  margin: 0 auto 5rem auto;
-  text-align: center;
-  gap: 2rem;
-}
-
-.features__list > li {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1.5rem
-}
-.features__num {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 100%;
-  aspect-ratio: 1 / 1;
-  margin: 0 auto;
-  border: 0.1rem solid var(--purple900);
-  align-content: center;
-  font-size: 1.3rem;
-}
-
-.features__content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.features__par {
-  font-family: var(--manrope);
-  line-height: 1.8;
-  margin-block-start: -0.5rem;
-  
+  background-color: var(--purple100);
+  padding-block-start: 9.5rem;
+  color: var(--purple900);
+  .features__list {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 auto 5rem auto;
+    text-align: center;
+    gap: 2rem;   
+    > li {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.5rem; 
+      .features__num {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 100%;
+        aspect-ratio: 1 / 1; /* keeps responsive. circles get squished at tablet vw without */
+        margin: 0 auto;
+        border: 0.1rem solid var(--purple900);
+        align-content: center;
+        font-size: 1.3rem;
+      }
+      .features__content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;      
+        .features__par {
+          font-family: var(--manrope);
+          line-height: 1.8;
+          margin-block-start: -0.5rem;
+        }
+      }
+    }
+  }
 }
 
 .features__round-bottom {
@@ -192,55 +187,49 @@ ol[role='list'] {
 .founder {
   display: flex;
   flex-direction: column;
-  width: 90%;
   padding-block: 6.5rem 0;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 auto; /* keeps it in the middle on larger vw */
+  .founder__img {
+    width: 17.5rem;
+    margin-block-end: -3rem;
+  }
+  .founder__content {
+    width: 21rem;
+    background-color: var(--purple900);
+    color: var(--white);
+    padding: 2rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    
+    .founder__header {
+      font-size: 2rem;
+    }
+    .founder__par {
+      font-family: var(--manrope);
+      line-height: 1.8;
+    }
+    .founder__btn {
+      width: 12rem;
+      font-size: 1rem;
+      background-color: var(--green);
+      color: var(--purple900);
+      padding: 1rem;
+      font-family: var(--manrope);
+      font-weight: 700;
+      border: none;
+    }
+    .founder__btn:hover {  /* the button hover is causing the area around button to move slightly. I'm not sure how to fix this */
+      background-color: var(--purple900);
+      color: var(--green);
+      border: 0.1rem solid var(--green);
+    }
+  }
 }
 
-.founder__img {
-  width: 17.5rem;
-  margin-block-end: -3rem;
-  position: relative;
-  overflow: hidden;
-  z-index: -1;
-}
-
-.founder__content {
-  width: 21rem;
-  background-color: var(--purple900);
-  color: var(--white);
-  padding: 2rem 2rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-
-.founder__header {
-  font-size: 2rem;
-
-}
-
-.founder__par {
-  font-family: var(--manrope);
-  line-height: 1.8;
-}
-
-.founder__btn {
-  width: 12rem;
-  font-size: 1rem;
-  background-color: var(--green);
-  color: var(--purple900);
-  padding: 1rem;
-  font-family: var(--manrope);
-  font-weight: 700;
-}
-
-.bg-three {
-  display: none;
-}
 
 .footer {
   display: flex;
@@ -250,54 +239,29 @@ ol[role='list'] {
   margin: 0 auto;
   width: 7rem;
   padding-block: 5rem;
-}
-
-.footer__img {
-  width: 6rem;
-  margin: 0 auto;
-}
-
-.footer__socials {
-  display: flex;
-  justify-content: space-between;
-}
-
-.hero__nav-apply:hover{
-  color: var(--green)
-}
-
-.hero__btn:hover {
-  background-color: var(--purple900);
-  color: var(--green);
-  border: 0.1rem solid var(--green);
-}
-
-.founder__btn:hover {
-  background-color: var(--purple900);
-  color: var(--green);
-  border: 0.1rem solid var(--green);
-  border-style: inset;
-  box-sizing: border-box;
-}
-
-.footer__socials img:hover {
-  color: var(--purple900);
+  .footer__img {
+    width: 6rem;
+    margin: 0 auto;
+  }
+  .footer__socials {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 @media screen and (min-width: 550px) {
   .hero {
     background-image: url("./assets/images/bg-pattern-1.svg"), url("./assets/images/bg-pattern-2.svg");
     background-repeat: no-repeat;
-    background-position: -20% 9%, 104% 40%;
+    background-position: -30vw 10vw, 120% 60%; /* % and vw is the best I found to position somewhat fix at this breakpoint any other better ways to make a bg-image responsive? */
     background-size: 20rem, 10rem;
     gap: 1.5rem;
-  }
-  .hero__header {
-    transform: scale(1.3);
-  }
-
-  .hero__btn {
-    margin-block-end: 8rem;
+    .hero__header {
+      transform: scale(1.3); /* is this scale bad for responsiveness on desktop? */
+    }
+    .hero__btn {
+      margin-block-end: 8rem;
+    }
   }
 
   .phone-img {
@@ -306,55 +270,45 @@ ol[role='list'] {
 
   .features {
     padding-block-start: 12rem;
+    .features__list > li {
+      flex-direction: row;
+      align-items: center;
+      gap: 4rem;
+      .features__content {
+        text-align: start;
+        gap: 2.3rem;
+        .features__header {
+        font-size: 1.7rem;
+        }
+      }  
+    }
   }
   
-  .features__header {
-    font-size: 1.7rem;
-  }
-
-  .features__content {
-    text-align: start;
-    gap: 2.3rem;
-  }
-
-  .features__list > li {
-    flex-direction: row;
-    align-items: center;
-    gap: 4rem;
-  }
-
   .founder {
     align-items: flex-start;
     padding-block: 7rem 7rem;
-    width: min(90%, 45rem);
-    
-  }
-
-  .founder__img {
-    width: 22rem;
-    margin-block-end: -8rem;
-  
-  }
-
-  .founder__content {
-    width: 32rem;
-    align-self: flex-end;
-    align-items: flex-start;
-    text-align: start;
-    padding: 3rem;
-    background-image: url(./assets/images/bg-pattern-3.svg);
-    background-repeat: no-repeat;
-    background-position:100% 120%;
-  }
-
-  .founder__btn {
-    
-    z-index: 2;
-  }
-
-  .founder__header {
-    font-size: 3rem;
-  }
+    width: min(90%, 45rem); /* really like how this works with the image and content */
+    .founder__img {
+      width: 22rem;
+      margin-block-end: -8rem;
+    }
+    .founder__content {
+      width: 32rem;
+      align-self: flex-end;
+      align-items: flex-start;
+      text-align: start;
+      padding: 3rem;
+      background-image: url(./assets/images/bg-pattern-3.svg); /* big problem with adding this design. being in __content as well as bleeding out of the elemnt into the white 
+      background. tried a lot, from <img> with multiple positions to putting this background-image in .founder and changing z-index so that it would show up in front of the
+      __content. this looked great but it prevented my button from having any hover effect. Position absoolute also kind of works but is not responsive at all. Please help if 
+      possible!! */
+      background-repeat: no-repeat;
+      background-position:100% 120%;
+      .founder__header {
+        font-size: 3rem;
+      }
+    }
+  }  
 }
 
 @media screen and (min-width: 1000px) {
@@ -362,12 +316,18 @@ ol[role='list'] {
     padding-top: 9rem;
     background-position: -7% 9%, 104% 40%;
     background-size: 17rem, 10rem;
-  }
-
-  .hero__btn {
+    .hero__nav {
+      width: 75%;
+      margin: 0;
+      padding: 1rem 0 0 0 ;
+      order: 99;   /* move to bottom of hero */
+      transform: scale(0.8);
+    }
+    .hero__btn {
     width: 8rem;
     margin: 0 0 15rem 0;
     padding: 0.5rem;
+    }
   }
 
   .phone-img {
@@ -375,67 +335,47 @@ ol[role='list'] {
     max-width: clamp(40vw, 38rem, 50vw);
   }
   
-  .hero__nav {
-    width: 75%;
-    margin: 0;
-    padding: 1rem 0 0 0 ;
-    order: 99;
-    transform: scale(0.8);
-  }
-
   .features {
     padding-block-start: 13rem;
-  }
-
-  .features__list {
-    width: 55.5rem;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0.5rem;
-  }
-
-  .features__list > li {
-    flex-direction: column;
-    gap: 2.5rem;
-
-  }
-
-  .features__content {
-    text-align: center;
-    gap: 1.5rem;
-    
-    .features__header {
-      font-size: 1.6rem;
-    }
-
-    .features__par {
-      font-size: 0.9rem;
-    }
-  }
+    .features__list {
+      width: 55.5rem;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.5rem;
+      > li {
+        flex-direction: column;
+        gap: 2.5rem;
+        .features__content {
+          text-align: center;
+          gap: 1.5rem;
+          .features__header {
+            font-size: 1.6rem;
+          }
+          .features__par {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }   
+  }    
 
   .founder {
     width: min(90%, 55rem);
-  }
-
-  .founder__img {
-    margin-block-end: -14.5rem;
-    width: 23rem;
-  }
-
-  .founder__content {
-    width: 36rem;
-    gap: 1.5rem;
-
+    .founder__img {
+      margin-block-end: -14.5rem;
+      width: 23rem;
+    }
+    .founder__content {
+      width: 36rem;
+      gap: 1.5rem;
       .founder__header {
         font-size: 2.8rem;
       }
-
       .founder__par {
         font-size: 0.9rem;
       }
-
       .founder__btn {
         width: 11rem;
       }
-  }
-  
+    }
+  }  
 }
