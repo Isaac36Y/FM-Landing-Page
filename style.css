@@ -73,7 +73,7 @@ ol[role='list'] {
   isolation: isolate;
 }
 
-
+/* first time trying nesting in css! Do I do it correctly or get to carried away? */
 
 .hero {
   background-color: var(--purple900);
@@ -338,6 +338,7 @@ ol[role='list'] {
   .features {
     padding-block-start: 13rem;
     .features__list {
+      padding-block-start: 6rem;
       width: 55.5rem;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 0.5rem;
